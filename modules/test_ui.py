@@ -5,7 +5,7 @@ def show_welcome():
 def choose_mode():
     print("\n1. Обучение (с подсказкой)")
     print("2. Экзамен (без подсказок)")
-    choice = input("Выберите режим (1 или 2): ")
+    choice = input("Выберите режим (1(обуч) или 2(экз)): ")
     return "learning" if choice == "1" else "exam"
 
 def ask_question(question_dict, num, total, mode):
@@ -14,7 +14,7 @@ def ask_question(question_dict, num, total, mode):
     for i, opt in enumerate(question_dict["options"]):
         print(f"{i+1}. {opt}")
     if mode == "learning":
-        print(f"💡 Подсказка: правильный вариант {question_dict['correct'] + 1}")
+        print(f" Подсказка: правильный вариант {question_dict['correct'] + 1}")
     while True:
         try:
             answer = int(input("Ваш ответ (номер): ")) - 1
@@ -27,7 +27,6 @@ def ask_question(question_dict, num, total, mode):
 def show_result(correct, total, mistakes, mode, variant):
     print("\n" + "="*40)
     print("РЕЗУЛЬТАТЫ ТЕСТА")
-    print("="*40)
     print(f"Вариант: {variant}")
     print(f"Режим: {'Обучение' if mode == 'learning' else 'Экзамен'}")
     print(f"Правильных ответов: {correct} из {total}")
@@ -46,8 +45,8 @@ def show_result(correct, total, mistakes, mode, variant):
         print("\n--- ОШИБКИ ---")
         for m in mistakes:
             print(f"Вопрос: {m['question']}")
-            print(f"  Ваш ответ: {m['user_answer']}")
-            print(f"  Правильный: {m['correct_answer']}\n")
+            print(f" Ваш ответ: {m['user_answer']}")
+            print(f" Правильный: {m['correct_answer']}\n")
 
 def show_goodbye():
     print("\nСпасибо за прохождение теста! До свидания!")
