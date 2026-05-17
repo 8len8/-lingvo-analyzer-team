@@ -7,12 +7,10 @@ def main():
     mode = choose_mode()
     
     variant = generate_test_variant()
-    print(f"\n📋 Ваш вариант теста: {variant}")
+    print(f"\n Ваш вариант теста: {variant}")
     
-    # Получаем 5 случайных вопросов
     raw_questions = get_random_questions(5)
     
-    # Перемешиваем варианты ответов для каждого вопроса
     questions = [shuffle_options(q) for q in raw_questions]
     
     correct_count = 0
@@ -23,14 +21,14 @@ def main():
         
         if is_correct:
             correct_count += 1
-            print("✅ Правильно!")
+            print(" Правильно!")
         else:
             mistakes.append({
                 "question": q["question"],
                 "user_answer": q["options"][user_answer],
                 "correct_answer": q["options"][q["correct"]]
             })
-            print("❌ Неправильно!")
+            print(" Неправильно!")
     
     show_result(correct_count, len(questions), mistakes, mode, variant)
     show_goodbye()
