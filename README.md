@@ -9,34 +9,31 @@
 | 8len8 | Тимлид | `main` | Архитектура, интеграция, мерж, README |
 | zagitovalera5615-a11y | Аналитик | `feature/analyzer` | База вопросов, `get_random_questions`, `shuffle_options`, `generate_test_variant` |
 | lovelyvgirl | UI/Тестировщик | `feature/ui` | Интерфейс, ввод ответов, подсчёт результата |
-|annaspop2886-sketch | Обозреватель | Написание отчета о проделанной работе
+|annaspop2886-sketch | Обозреватель | Написание отчета о проделанной работе, создание презентации
 
 # Как запустить проект
 1. Склонируйте репозиторий:
    ```bash
    git clone https://github.com/8len8/-lingvo-analyzer-team.git
    cd -lingvo-analyzer-team
-2. Создайте виртуальное окружение:
-python -m venv .venv
-3. Активируйте:
-source .venv/bin/activate (Linux/macOS) или .venv\Scripts\activate (Windows)
-4. Установите зависимости:
-pip install -r requirements.txt
-5. Запустите:
-python main.py
-6. Технологии и модули
-Python 3.10+
-7. Стандартные модули: string, collections, datetime
-Без сторонних NLP-библиотек
+2. Создайте виртуальное окружение: python -m venv .venv
+3. Активируйте: source .venv/bin/activate (Linux/macOS) или .venv\Scripts\activate (Windows)
+4. Установите зависимости (если есть): pip install -r requirements.txt
+5. Запустите: python main.py
+# Технологии и модули
+- Python 3.x
+- Стандартные модули: math, random, datetime, string
+- Без сторонних NLP-библиотек
+
 # Структура репозитория
-# project/
-# ├── README.md                 # описание, как запустить
-# ├── requirements.txt          # зависимости (пустой)
-# ├── main.py                   # точка входа
-# └── modules/                  # собственные модули команды
-#    ├── __init__.py           # признак пакета
-#    ├── question_bank.py      # база вопросов и генерация
-#    └── test_ui.py            # интерфейс и обработка ответов
+ project/
+ ├── README.md                 # описание, как запустить
+ ├── requirements.txt          # зависимости (пустой)
+ ├── main.py                   # точка входа
+ └── modules/                  # собственные модули команды
+    ├── __init__.py           # признак пакета
+    ├── question_bank.py      # база вопросов и генерация
+    └── test_ui.py            # интерфейс и обработка ответов
 
 # Как это работает
 1. База содержит 20+ вопросов с вариантами ответов

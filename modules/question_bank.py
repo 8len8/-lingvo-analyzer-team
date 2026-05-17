@@ -1,12 +1,10 @@
-# modules/question_bank.py
 import random
 from datetime import datetime
-
 QUESTIONS = [
     {
         "question": "Сколько дней в году?",
         "options": ["365", "366", "364"],
-        "correct": 0  # индекс правильного ответа
+        "correct": 0  
     },
     {
         "question": "Какой цвет у неба в ясный день?",
@@ -106,11 +104,9 @@ QUESTIONS = [
 ]
 
 def get_random_questions(n: int = 10) -> list:
-    """Возвращает случайные N вопросов из базы"""
     return random.sample(QUESTIONS, min(n, len(QUESTIONS)))
 
 def shuffle_options(question: dict) -> dict:
-    """Перемешивает варианты ответов и возвращает новый вопрос с перемешанными вариантами"""
     import random
     options = question["options"].copy()
     random.shuffle(options)
